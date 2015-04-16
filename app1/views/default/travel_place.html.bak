@@ -1,0 +1,40 @@
+{{extend 'check.html'}}
+{{for postal in postals:}}
+<h1 style="color:black;text-align:center;font-size:200%;color:white">{{=postal.Name_TA}}</h1>
+
+
+<p></br></p>
+<div class="boxed">
+<table style="width:100%">
+<tr>
+    <td style="padding:10px 0px 0px 30px;color:black;font face=verdana"><b>Tour Packages:</b><br/><br/>
+      {{for package in tour_package:}}
+        <b>-> </b>{{=package.Tour_Package_TA}}<br/><br/>
+                {{pass}}
+    </td></tr>
+<tr>
+	<td style="padding:30px 0px 0px 30px;color:black;font face=verdana">Address: 
+    {{=postal.Street_TA}}, 
+     {{=postal.City_TA}}, 
+        {{=postal.State_TA}}-{{=postal.Zip_TA}}<br/><br/>
+        Phone Numbers:<br/>
+
+      {{for phone in phones:}}
+        {{=phone.Phone_TA}}<br/>
+            {{pass}}
+      </td>
+    </tr>
+</table>
+</div>
+{{pass}}
+<div class="boxed1" style="margin-top: 20px;">
+    {{for comment in comments:}}
+
+ <div class="well"><strong>{{=comment.User_Comment_Place}}</strong><br/>Rated : {{=comment.User_Rating_Place}}/5<br/><a href={{=URL('comment',args=[comment.id,comment.User_Comment_Place])}}>Comment</a><br />Posted on {{=comment.created_on}} by {{=comment.created_by.first_name}} {{=comment.created_by.last_name}}</p>
+    </div>
+{{pass}}
+
+</div>
+<div class="boxed">
+{{=form}}
+</div>

@@ -1,0 +1,31 @@
+{{extend 'check.html'}}
+{{for postal in postals:}}
+<h1 style="color:black;text-align:center;font-size:200%;color:white">{{=postal.Name_RH}}</h1>
+
+
+<p></br></p>
+<div class="boxed">
+<table>
+<tr>
+	<td width=50%>
+		<p style="font-size:100%;padding:30px 0px 0px 0px;color:white">{{=postal.Description_RH}}<br/></p>
+	</td>
+	<td width=50%>
+		<div style="padding:40px 0px 0px 60px">
+			<p style="font-size:100%;color:white"><b>Timings: {{=postal.Opening_RH}}--{{=postal.Closing_RH}}</b></p><br/><br/>
+			<p style="font-size:100%;color:white"><b>Ticket Price: Rs.{{=postal.Ticket_Price_RH}}</b></p>
+		</div>
+	</td>
+</tr>
+</table>
+{{pass}}
+</div>
+<div class="boxed">
+    {{for comment in comments:}}
+ <div class="well"><strong>{{=comment.User_Comment_Place}}</strong><br/>Rated : {{=comment.User_Rating_Place}}/5<br/><a href={{=URL('comment',args=[comment.id,comment.User_Comment_Place])}}>Comment</a><br />Posted on {{=comment.created_on}} by {{=comment.created_by.first_name}} {{=comment.created_by.last_name}}</p>
+    </div>
+{{pass}}
+<div class="boxed" style="color:white;">
+{{=form}}
+</div>
+</div>

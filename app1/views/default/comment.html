@@ -1,0 +1,12 @@
+{{extend 'check.html'}}
+<h3 >{{=y}}</h3>
+{{for postal in postals:}}
+    <div class="well"><strong>{{=postal.reply}}</strong>
+        <br/>
+        {{if postal.created_by == auth.user_id:}}
+        {{=A('Edit this post',_class="btn btn-info",_href=URL('edit_post_comment',args=[postal.id,y]))}}
+        {{pass}}<br/>
+     Commented on {{=postal.created_on}} by {{=postal.created_by.first_name}} {{=postal.created_by.last_name}}</p>
+    </div>
+{{pass}}
+{{=form}}

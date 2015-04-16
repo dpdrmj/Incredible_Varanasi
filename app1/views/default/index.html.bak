@@ -1,0 +1,13 @@
+{{extend 'layout.html'}}
+
+<h2>
+    Previous
+    </h2>
+<table class="table">
+    {{for row in rows:}}
+    <tr>
+        <td><a href={{=URL('show',args=row.id)}}>{{=row.title}}</a></td>
+        <td>{{=row.created_on}}</td>
+    </tr>
+       {{pass}}
+</table>

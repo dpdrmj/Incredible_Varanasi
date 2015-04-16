@@ -1,0 +1,36 @@
+{{extend 'check.html'}}
+
+<h1 style="color:blue;text-align:center;font-size:200%"> Fuel Agency Name </h1>
+
+<p></br></p>
+<div class="boxed">
+<table style="width:100%">
+<tr><td>
+	<p style="font-size:200%;padding:0px 0px 0px 30px">Affiliated To<br/></p>
+	<p style="font-size:130%;padding:0px 0px 0px 30px">
+	Fuel Company Name<br/>
+	</p>
+	<p style="font-size:200%;padding:0px 0px 0px 30px">Address<br/></p>
+	<p style="font-size:130%;padding:0px 0px 0px 30px">
+	A<br/>B<br/>
+	</p>
+	<p style="font-size:200%;padding:0px 0px 0px 30px">Phone Number<br/></p>
+	<p style="font-size:130%;padding:0px 0px 0px 30px">
+	A<br/>
+	</p>
+</td>
+<td>
+	<div style="text-align:right;padding:50px 50px 0px 0px">
+	<p style="font-size:120%;color:#3D3D3D;padding:0px 100px 0px 0px"><b>Contact Us</b></p>
+	<form>
+		Name: <input type="text" style="width: 300px" name="name"><br><br>
+		Email: <input type="text" style="width: 300px" name="email"><br><br>
+		Subject: <input type="text" style="width: 300px" name="email"><br><br>
+		<div style="padding:0px 280px 0px 0px">Message:<br></div>
+		<textarea name="mssg" cols="46" rows="5"></textarea><br><br>
+		<input type="submit" value="Submit">
+	</form>
+	</div>
+</td>
+</table>
+</div>

@@ -1,0 +1,26 @@
+{{extend 'check.html'}}
+<h1 style="color:black; margin-top: 40px;"> Handloom Areas</h1>
+{{=form}}
+<table class="table" style="margin-top: 140px;">
+        {{if not check_form.accepted:}}
+            {{for row in hand_rows:}}
+            <tr>
+
+              <td><a href={{=URL('handloom_place',args=row[2])}}>{{=row[0]}}</a></td>
+      
+              <td>{{=row[1][0]}}</td>
+            </tr>
+
+             {{pass}}
+        {{pass}}
+    
+{{if check_form.accepted:}}
+{{for er in x:}}
+    <tr>
+        <td><a href={{=URL('handloom_place',args=er[3])}}>{{=er[0]}}</a></td>
+        <td>{{=er[1]}}</td>
+        <td>{{=er[2]}}</td>
+    </tr>
+{{pass}}
+        {{pass}}
+</table>

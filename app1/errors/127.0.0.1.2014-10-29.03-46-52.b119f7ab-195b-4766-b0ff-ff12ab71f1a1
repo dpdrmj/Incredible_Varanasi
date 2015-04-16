@@ -1,0 +1,216 @@
+(dp1
+S'output'
+p2
+S'The "end" tag is unmatched, please check if you have a starting "block" tag'
+p3
+sS'layer'
+p4
+S'ParserContainer'
+p5
+sS'code'
+p6
+S"{{left_sidebar_enabled,right_sidebar_enabled=False,('message' in globals())}}\r\n{{extend 'layout.html'}}\r\n\r\n{{if 'message' in globals():}}\r\n<h3>{{=message}}</h3>\r\n\r\n\r\n{{end}}\r\n"
+p7
+sS'snapshot'
+p8
+(dp9
+S'exception'
+p10
+(dp11
+S'__module__'
+p12
+S"'gluon.rocket'"
+p13
+sS'__getslice__'
+p14
+S"<method-wrapper '__getslice__' of SocketTimeout object>"
+p15
+sS'__str__'
+p16
+S"<method-wrapper '__str__' of SocketTimeout object>"
+p17
+sS'__reduce__'
+p18
+S'<built-in method __reduce__ of SocketTimeout object>'
+p19
+sS'__dict__'
+p20
+S'{}'
+p21
+sS'__sizeof__'
+p22
+S'<built-in method __sizeof__ of SocketTimeout object>'
+p23
+sS'__weakref__'
+p24
+S'None'
+p25
+sS'__init__'
+p26
+S"<method-wrapper '__init__' of SocketTimeout object>"
+p27
+sS'__setattr__'
+p28
+S"<method-wrapper '__setattr__' of SocketTimeout object>"
+p29
+sS'__reduce_ex__'
+p30
+S'<built-in method __reduce_ex__ of SocketTimeout object>'
+p31
+sS'__new__'
+p32
+S'<built-in method __new__ of type object>'
+p33
+sS'__format__'
+p34
+S'<built-in method __format__ of SocketTimeout object>'
+p35
+sS'__class__'
+p36
+S"<class 'gluon.rocket.SocketTimeout'>"
+p37
+sS'__doc__'
+p38
+S"'Exception for when a socket times out between requests.'"
+p39
+sS'__getitem__'
+p40
+S"<method-wrapper '__getitem__' of SocketTimeout object>"
+p41
+sS'__setstate__'
+p42
+S'<built-in method __setstate__ of SocketTimeout object>'
+p43
+sS'__getattribute__'
+p44
+S"<method-wrapper '__getattribute__' of SocketTimeout object>"
+p45
+sS'args'
+p46
+S"('Socket timed out before request.',)"
+p47
+sS'__subclasshook__'
+p48
+S'<built-in method __subclasshook__ of type object>'
+p49
+sS'__unicode__'
+p50
+S'<built-in method __unicode__ of SocketTimeout object>'
+p51
+sS'__delattr__'
+p52
+S"<method-wrapper '__delattr__' of SocketTimeout object>"
+p53
+sS'__repr__'
+p54
+S"<method-wrapper '__repr__' of SocketTimeout object>"
+p55
+sS'__hash__'
+p56
+S"<method-wrapper '__hash__' of SocketTimeout object>"
+p57
+ssS'evalue'
+p58
+S'Socket timed out before request.'
+p59
+sS'frames'
+p60
+(lp61
+(dp62
+S'file'
+p63
+S'C:\\Users\\lenovo\\Downloads\\Compressed\\web2py\\gluon\\rocket.py'
+p64
+sS'dump'
+p65
+(dp66
+sS'lnum'
+p67
+I1337
+sS'lines'
+p68
+(dp69
+sS'call'
+p70
+S'(self=<WSGIWorker(Thread-8, started daemon 5800)>)'
+p71
+sS'func'
+p72
+S'run'
+p73
+sa(dp74
+g63
+S'C:\\Users\\lenovo\\Downloads\\Compressed\\web2py\\gluon\\rocket.py'
+p75
+sg65
+(dp76
+sg67
+I1830
+sg68
+(dp77
+sg70
+S'(self=<WSGIWorker(Thread-8, started daemon 5800)>, conn=<gluon.rocket.Connection object>)'
+p78
+sg72
+S'run_app'
+p79
+sa(dp80
+g63
+S'C:\\Users\\lenovo\\Downloads\\Compressed\\web2py\\gluon\\rocket.py'
+p81
+sg65
+(dp82
+sg67
+I1650
+sg68
+(dp83
+sg70
+S'(self=<WSGIWorker(Thread-8, started daemon 5800)>, sock_file=<socket._fileobject object>, conn=<gluon.rocket.Connection object>)'
+p84
+sg72
+S'build_environ'
+p85
+sa(dp86
+g63
+S'C:\\Users\\lenovo\\Downloads\\Compressed\\web2py\\gluon\\rocket.py'
+p87
+sg65
+(dp88
+sg67
+I1401
+sg68
+(dp89
+sg70
+S'(self=<WSGIWorker(Thread-8, started daemon 5800)>, sock_file=<socket._fileobject object>)'
+p90
+sg72
+S'read_request_line'
+p91
+sasS'pyver'
+p92
+S'Python 2.7.6: C:\\Users\\lenovo\\Downloads\\Compressed\\web2py\\web2py.exe (prefix: )'
+p93
+sS'etype'
+p94
+S"<class 'gluon.rocket.SocketTimeout'>"
+p95
+sS'date'
+p96
+S'Wed Oct 29 03:46:52 2014'
+p97
+sS'locals'
+p98
+(dp99
+S'sock_file'
+p100
+S'<socket._fileobject object>'
+p101
+sS'self'
+p102
+S'<WSGIWorker(Thread-8, started daemon 5800)>'
+p103
+sssS'traceback'
+p104
+S'Traceback (most recent call last):\n  File "gluon/rocket.py", line 1337, in run\n  File "gluon/rocket.py", line 1830, in run_app\n  File "gluon/rocket.py", line 1650, in build_environ\n  File "gluon/rocket.py", line 1401, in read_request_line\nSocketTimeout: Socket timed out before request.\n'
+p105
+s.

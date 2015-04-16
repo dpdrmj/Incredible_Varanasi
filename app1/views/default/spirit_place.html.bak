@@ -1,0 +1,21 @@
+{{extend 'check.html'}}
+{{for postal in postals:}}
+<h1 style="color:black;text-align:center;font-size:200%">{{=postal.Name_SH}}</h1>
+
+
+
+<p></br></p>
+<div class="boxed">
+<table style="width:100%">
+<tr>
+	<td width=50%>
+		<p style="font-size:100%;padding:40px 0px 0px 30px">{{=postal.Description_SH}}<br/></p>
+	</td>
+	<td width=50%>
+		<div style="padding:50px 0px 0px 50px">
+			<p style="font-size:120%;color:#3D3D3D"><b>Timings: {{=postal.Opening_SH}}--{{=postal.Closing_SH}}</b></p>
+		</div>
+	</td>
+</table>
+</div>
+{{pass}}

@@ -1,0 +1,513 @@
+# -*- coding: utf-8 -*-
+# this file is released under public domain and you can use without limitations
+
+#########################################################################
+## This is a sample controller
+## - index is the default action of any application
+## - user is required for authentication and authorization
+## - download is for downloading files uploaded in the db (does streaming)
+## - api is an example of Hypermedia API support and access control
+#########################################################################
+def home():
+    response.flash = "welcome to incredible varanasi"
+    #mail.send(to=['mehuljain811@gmail.com'],
+          #subject='hello',
+          # If reply_to is omitted, then mail.settings.sender is used
+          #reply_to='mehuljain811@gmail.com',
+          #message='hi there')
+
+    response.files.append(URL('static', 'css/background.css'))
+    response.files.append(URL('static', 'css/grid.css'))
+    return locals()
+
+@auth.requires_login()
+def bank():
+    #hrei_rows = db(db.places.place_type=="heritage").select(orderby = ~db.places.rating)
+    form = SQLFORM.factory(Field('Current Location', requires=IS_IN_DB(db, 'places.place_name', '%(place_name)s')))
+    check_form = form.process()
+    if check_form.accepted:
+        t=form.components[0]
+        bank_rows = db(db.place_distance.place2==t).select(db.place_distance.place1,db.place_distance.distance,orderby = db.place_distance.distance)
+        #hrei_near_rows = db.executesql('select place1,distance from place_distance where place2=selected_place order by distance')
+    else:
+        bank_rows = db.executesql('select place_name,rating,Place_ID from places where place_type="bank" order by rating desc')
+    return locals()
+
+@auth.requires_login()
+def bank_place():
+    response.files.append(URL('static', 'css/background_bank.css'))
+    response.files.append(URL('static', 'css/box_bank.css'))
+    response.files.append(URL('static', 'css/box_bank_contact.css'))
+    postals = db(db.bank.ID_BK==request.args[0]).select()
+    phones = db(db.bank_2.ID_BK_2==request.args[0]).select(db.bank_2.Phone_BK)
+    db.visit_places.Place_ID.default = request.args[0]
+    db.visit_places.Place_ID.readable = False
+    db.visit_places.Place_ID.writable = False
+
+    db.visit_places.RU_ID_Place.readable = False
+    db.visit_places.RU_ID_Place.writable = False
+
+    form = SQLFORM(db.visit_places).process()
+    comments = db(db.visit_places.Place_ID==request.args[0]).select()
+
+    db.visit_places.RU_ID_Place.default = db.visit_places.created_by
+    return locals()
+
+
+@auth.requires_login()
+def entertainment():
+    #hrei_rows = db(db.places.place_type=="heritage").select(orderby = ~db.places.rating)
+    form = SQLFORM.factory(Field('Current Location', requires=IS_IN_DB(db, 'places.place_name', '%(place_name)s')))
+    check_form = form.process()
+    if check_form.accepted:
+        t=form.components[0]
+        enter_rows = db(db.place_distance.place2==t).select(db.place_distance.place1,db.place_distance.distance,orderby = db.place_distance.distance)
+        #hrei_near_rows = db.executesql('select place1,distance from place_distance where place2=selected_place order by distance')
+    else:
+        enter_rows = db.executesql('select place_name,rating,Place_ID from places where place_type="entertainment" order by rating desc')
+    return locals()
+
+@auth.requires_login()
+def enter_place():
+    response.files.append(URL('static', 'css/background_entertainment.css'))
+    response.files.append(URL('static', 'css/box_entertainment.css'))
+    postals = db(db.entertainment_hub.ID_EH==request.args[0]).select()
+    db.visit_places.Place_ID.default = request.args[0]
+    db.visit_places.Place_ID.readable = False
+    db.visit_places.Place_ID.writable = False
+    db.visit_places.RU_ID_Place.readable = False
+    db.visit_places.RU_ID_Place.writable = False
+
+    form = SQLFORM(db.visit_places).process()
+    comments = db(db.visit_places.Place_ID==request.args[0]).select()
+
+    db.visit_places.RU_ID_Place.default = db.visit_places.created_by
+    return locals()
+
+
+@auth.requires_login()
+def fuel_agency():
+    #hrei_rows = db(db.places.place_type=="heritage").select(orderby = ~db.places.rating)
+    form = SQLFORM.factory(Field('Current Location', requires=IS_IN_DB(db, 'places.place_name', '%(place_name)s')))
+    check_form = form.process()
+    if check_form.accepted:
+        t=form.components[0]
+        fag_rows = db(db.place_distance.place2==t).select(db.place_distance.place1,db.place_distance.distance,orderby = db.place_distance.distance)
+        #hrei_near_rows = db.executesql('select place1,distance from place_distance where place2=selected_place order by distance')
+    else:
+        fag_rows = db.executesql('select place_name,rating,Place_ID from places where place_type="fuel agency" order by rating desc')
+    return locals()
+
+@auth.requires_login()
+def fuelagency_place():
+    response.files.append(URL('static', 'css/background_fuelagency.css'))
+    response.files.append(URL('static', 'css/box_fuel.css'))
+    postals = db(db.fuel_agency.ID_FA==request.args[0]).select()
+    x = db.fuel_agency(db.fuel_agency.ID_FA==request.args[0])
+    affils = db(db.fuel_company.ID_FC==x.ID_FC_R).select()
+    phones = db(db.fuel_agency_2.ID_FA_2==request.args[0]).select(db.fuel_agency_2.Phone_FA,distinct=True)
+    db.visit_places.Place_ID.default = request.args[0]
+    db.visit_places.Place_ID.readable = False
+    db.visit_places.Place_ID.writable = False
+    db.visit_places.RU_ID_Place.readable = False
+    db.visit_places.RU_ID_Place.writable = False
+    form = SQLFORM(db.visit_places).process()
+    comments = db(db.visit_places.Place_ID==request.args[0]).select()
+
+    db.visit_places.RU_ID_Place.default = db.visit_places.created_by
+    return locals()
+
+
+
+@auth.requires_login()
+def fuel_company():
+    #hrei_rows = db(db.places.place_type=="heritage").select(orderby = ~db.places.rating)
+    form = SQLFORM.factory(Field('Current Location', requires=IS_IN_DB(db, 'places.place_name', '%(place_name)s')))
+    check_form = form.process()
+    if check_form.accepted:
+        t=form.components[0]
+        fc_rows = db(db.place_distance.place2==t).select(db.place_distance.place1,db.place_distance.distance,orderby = db.place_distance.distance)
+        #hrei_near_rows = db.executesql('select place1,distance from place_distance where place2=selected_place order by distance')
+    else:
+        fc_rows = db.executesql('select place_name,rating,Place_ID from places where place_type="fuel comapany" order by rating desc')
+    return locals()
+
+
+@auth.requires_login()
+def fuelcompany_place():
+    response.files.append(URL('static', 'css/background_fuelcompany.css'))
+    response.files.append(URL('static', 'css/box_fuel.css'))
+    postals = db(db.fuel_company.ID_FC==request.args[0]).select()
+    
+    db.visit_places.Place_ID.default = request.args[0]
+    db.visit_places.Place_ID.readable = False
+    db.visit_places.Place_ID.writable = False
+
+    db.visit_places.RU_ID_Place.readable = False
+    db.visit_places.RU_ID_Place.writable = False
+
+    form = SQLFORM(db.visit_places).process()
+    comments = db(db.visit_places.Place_ID==request.args[0]).select()
+
+    db.visit_places.RU_ID_Place.default = db.visit_places.created_by
+    return locals()
+
+@auth.requires_login()
+def handloom():
+    #hrei_rows = db(db.places.place_type=="heritage").select(orderby = ~db.places.rating)
+    form = SQLFORM.factory(Field('Current Location', requires=IS_IN_DB(db, 'places.place_name', '%(place_name)s')))
+    check_form = form.process()
+    if check_form.accepted:
+        t=form.components[0]
+        hand_rows = db(db.place_distance.place2==t).select(db.place_distance.place1,db.place_distance.distance,orderby = db.place_distance.distance)
+        #hrei_near_rows = db.executesql('select place1,distance from place_distance where place2=selected_place order by distance')
+    else:
+        hand_rows = db.executesql('select place_name,rating,Place_ID from places where place_type="handloom" order by rating desc')
+    return locals()
+
+@auth.requires_login()
+def handloom_place():
+    response.files.append(URL('static', 'css/background_handloom.css'))
+    response.files.append(URL('static', 'css/box_handloom.css'))
+    postals = db(db.local_handlooms.ID_LH==request.args[0]).select()
+    phones = db(db.local_handlooms_2.ID_LH_2==request.args[0]).select(db.local_handlooms_2.Phone_LH)
+    db.visit_places.Place_ID.default = request.args[0]
+    db.visit_places.Place_ID.readable = False
+    db.visit_places.Place_ID.writable = False
+
+    db.visit_places.RU_ID_Place.readable = False
+    db.visit_places.RU_ID_Place.writable = False
+
+    form = SQLFORM(db.visit_places).process()
+    comments = db(db.visit_places.Place_ID==request.args[0]).select()
+
+    db.visit_places.RU_ID_Place.default = db.visit_places.created_by
+    return locals()
+
+
+
+
+@auth.requires_login()
+def heritage():
+    #hrei_rows = db(db.places.place_type=="heritage").select(orderby = ~db.places.rating)
+    form = SQLFORM.factory(Field('Current Location', requires=IS_IN_DB(db, 'places.place_name', '%(place_name)s')))
+    check_form = form.process()
+    if check_form.accepted:
+        t=form.components[0]
+        hrei_rows = db(db.place_distance.place2==t).select(db.place_distance.place1,db.place_distance.distance,orderby = db.place_distance.distance)
+        #hrei_near_rows = db.executesql('select place1,distance from place_distance where place2=selected_place order by distance')
+    else:
+        hrei_rows = db.executesql('select Place_Name as place1,rating,Place_ID from places where Place_Type="heritage" order by rating desc')
+    return locals()
+
+@auth.requires_login()
+def heri_place():
+    response.files.append(URL('static', 'css/background_heritage.css'))
+    response.files.append(URL('static', 'css/box_heritage.css'))
+    #postal = db.heritage_areas(request.args)
+    #posts = db.executesql('select * from heritage_areas where ID_HA="ha1"')
+    postals = db(db.heritage_areas.ID_HA==request.args[0]).select()
+    db.visit_places.Place_ID.default = request.args[0]
+    db.visit_places.Place_ID.readable = False
+    db.visit_places.Place_ID.writable = False
+
+    db.visit_places.RU_ID_Place.readable = False
+    db.visit_places.RU_ID_Place.writable = False
+
+    form = SQLFORM(db.visit_places).process()
+    comments = db(db.visit_places.Place_ID==request.args[0]).select()
+
+    db.visit_places.RU_ID_Place.default = db.visit_places.created_by
+
+    return locals()
+
+
+
+
+
+@auth.requires_login()
+def hotel():
+    #hrei_rows = db(db.places.place_type=="heritage").select(orderby = ~db.places.rating)
+    form = SQLFORM.factory(Field('Current Location', requires=IS_IN_DB(db, 'places.place_name', '%(place_name)s')))
+    check_form = form.process()
+    if check_form.accepted:
+        t=form.components[0]
+        hotel_rows = db(db.place_distance.place2==t).select(db.place_distance.place1,db.place_distance.distance,orderby = db.place_distance.distance)
+        #hrei_near_rows = db.executesql('select place1,distance from place_distance where place2=selected_place order by distance')
+    else:
+        hotel_rows = db.executesql('select place_name,rating,Place_ID from places where place_type="hotel" order by rating desc')
+    return locals()
+
+@auth.requires_login()
+def hotel_place():
+    response.files.append(URL('static', 'css/background_hotel.css'))
+    response.files.append(URL('static', 'css/box_entertainment.css'))
+    postals = db(db.hotels.ID_HT==request.args[0]).select()
+    
+    db.visit_places.Place_ID.default = request.args[0]
+    db.visit_places.Place_ID.readable = False
+    db.visit_places.Place_ID.writable = False
+
+    db.visit_places.RU_ID_Place.readable = False
+    db.visit_places.RU_ID_Place.writable = False
+
+    form = SQLFORM(db.visit_places).process()
+    comments = db(db.visit_places.Place_ID==request.args[0]).select()
+
+    db.visit_places.RU_ID_Place.default = db.visit_places.created_by
+    return locals()
+
+
+@auth.requires_login()
+def recreation():
+    #hrei_rows = db(db.places.place_type=="heritage").select(orderby = ~db.places.rating)
+    form = SQLFORM.factory(Field('Current Location', requires=IS_IN_DB(db, 'places.place_name', '%(place_name)s')))
+    check_form = form.process()
+    if check_form.accepted:
+        t=form.components[0]
+        rec_rows = db(db.place_distance.place2==t).select(db.place_distance.place1,db.place_distance.distance,orderby = db.place_distance.distance)
+        #hrei_near_rows = db.executesql('select place1,distance from place_distance where place2=selected_place order by distance')
+    else:
+        rec_rows = db.executesql('select place_name,rating,Place_ID from places where place_type="recreation" order by rating desc')
+    return locals()
+
+@auth.requires_login()
+def recreat_place():
+    response.files.append(URL('static', 'css/background_recreation.css'))
+    response.files.append(URL('static', 'css/box_entertainment.css'))
+    postals = db(db.recreation_hub.ID_RH==request.args[0]).select()
+    
+    db.visit_places.Place_ID.default = request.args[0]
+    db.visit_places.Place_ID.readable = False
+    db.visit_places.Place_ID.writable = False
+
+    db.visit_places.RU_ID_Place.readable = False
+    db.visit_places.RU_ID_Place.writable = False
+
+    form = SQLFORM(db.visit_places).process()
+    comments = db(db.visit_places.Place_ID==request.args[0]).select()
+
+    db.visit_places.RU_ID_Place.default = db.visit_places.created_by
+    return locals()
+
+
+
+
+@auth.requires_login()
+def restaurant():
+    #hrei_rows = db(db.places.place_type=="heritage").select(orderby = ~db.places.rating)
+    form = SQLFORM.factory(Field('Current Location', requires=IS_IN_DB(db, 'places.place_name', '%(place_name)s')))
+    check_form = form.process()
+    if check_form.accepted:
+        t=form.components[0]
+        restaur_rows = db(db.place_distance.place2==t).select(db.place_distance.place1,db.place_distance.distance,orderby = db.place_distance.distance)
+        #hrei_near_rows = db.executesql('select place1,distance from place_distance where place2=selected_place order by distance')
+    else:
+        restaur_rows = db.executesql('select place_name,rating,Place_ID from places where place_type="restaurant" order by rating desc')
+    return locals()
+
+@auth.requires_login()
+def restaur_place():
+    response.files.append(URL('static', 'css/background_restaurant.css'))
+    response.files.append(URL('static', 'css/box_fuel.css'))
+    postals = db(db.restaurant.ID_RS==request.args[0]).select()
+    phones = db(db.restaurant_2.ID_RS_2==request.args[0]).select(db.restaurant_2.Phone_RS)
+    db.visit_places.Place_ID.default = request.args[0]
+    db.visit_places.Place_ID.readable = False
+    db.visit_places.Place_ID.writable = False
+
+    db.visit_places.RU_ID_Place.readable = False
+    db.visit_places.RU_ID_Place.writable = False
+
+    form = SQLFORM(db.visit_places).process()
+    comments = db(db.visit_places.Place_ID==request.args[0]).select()
+
+    db.visit_places.RU_ID_Place.default = db.visit_places.created_by
+    return locals()
+
+
+@auth.requires_login()
+def spiritual():
+    #hrei_rows = db(db.places.place_type=="heritage").select(orderby = ~db.places.rating)
+    form = SQLFORM.factory(Field('Current Location', requires=IS_IN_DB(db, 'places.place_name', '%(place_name)s')))
+    check_form = form.process()
+    if check_form.accepted:
+        t=form.components[0]
+        spirit_rows = db(db.place_distance.place2==t).select(db.place_distance.place1,db.place_distance.distance,orderby = db.place_distance.distance)
+        #hrei_near_rows = db.executesql('select place1,distance from place_distance where place2=selected_place order by distance')
+    else:
+        spirit_rows = db.executesql('select place_name,rating,Place_ID from places where place_type="spiritual" order by rating desc')
+    return locals()
+
+@auth.requires_login()
+def spirit_place():
+    response.files.append(URL('static', 'css/background_spiritual.css'))
+    response.files.append(URL('static', 'css/box_spiritual.css'))
+    postals = db(db.spiritual_hub.ID_SH==request.args[0]).select()
+    
+    db.visit_places.Place_ID.default = request.args[0]
+    db.visit_places.Place_ID.readable = False
+    db.visit_places.Place_ID.writable = False
+
+    db.visit_places.RU_ID_Place.readable = False
+    db.visit_places.RU_ID_Place.writable = False
+
+    form = SQLFORM(db.visit_places).process()
+    comments = db(db.visit_places.Place_ID==request.args[0]).select()
+
+    db.visit_places.RU_ID_Place.default = db.visit_places.created_by
+    return locals()
+
+
+@auth.requires_login()
+def taxi_service():
+    #hrei_rows = db(db.places.place_type=="heritage").select(orderby = ~db.places.rating)
+    form = SQLFORM.factory(Field('Current Location', requires=IS_IN_DB(db, 'places.place_name', '%(place_name)s')))
+    check_form = form.process()
+    if check_form.accepted:
+        t=form.components[0]
+        taxi_rows = db(db.place_distance.place2==t).select(db.place_distance.place1,db.place_distance.distance,orderby = db.place_distance.distance)
+        #hrei_near_rows = db.executesql('select place1,distance from place_distance where place2=selected_place order by distance')
+    else:
+        taxi_rows = db.executesql('select place_name,rating,Place_ID from places where place_type="taxi service" order by rating desc')
+    return locals()
+
+@auth.requires_login()
+def taxi_place():
+    response.files.append(URL('static', 'css/background_taxiservice.css'))
+    response.files.append(URL('static', 'css/box_taxiservice.css'))
+    postals = db(db.taxi_service.ID_TS==request.args[0]).select()
+    phones = db(db.taxi_service_2.ID_TS_2==request.args[0]).select(db.taxi_service_2.Phone_TS,distinct=True)
+    carprices = db(db.taxi_service_2.ID_TS_2==request.args[0]).select(db.taxi_service_2.Car_Price_TS,distinct=True)
+    cartypes = db(db.taxi_service_2.ID_TS_2==request.args[0]).select(db.taxi_service_2.Car_Types_TS,distinct=True)
+    db.visit_places.Place_ID.default = request.args[0]
+    db.visit_places.Place_ID.readable = False
+    db.visit_places.Place_ID.writable = False
+
+    db.visit_places.RU_ID_Place.readable = False
+    db.visit_places.RU_ID_Place.writable = False
+
+    form = SQLFORM(db.visit_places).process()
+    comments = db(db.visit_places.Place_ID==request.args[0]).select()
+
+    db.visit_places.RU_ID_Place.default = db.visit_places.created_by
+    return locals()
+
+@auth.requires_login()
+def travel_agency():
+    #hrei_rows = db(db.places.place_type=="heritage").select(orderby = ~db.places.rating)
+    form = SQLFORM.factory(Field('Current Location', requires=IS_IN_DB(db, 'places.place_name', '%(place_name)s')))
+    check_form = form.process()
+    if check_form.accepted:
+        t=form.components[0]
+        travel_rows = db(db.place_distance.place2==t).select(db.place_distance.place1,db.place_distance.distance,orderby = db.place_distance.distance)
+        #hrei_near_rows = db.executesql('select place1,distance from place_distance where place2=selected_place order by distance')
+    else:
+        travel_rows = db.executesql('select place_name,rating,Place_ID from places where place_type="travel agency" order by rating desc')
+    return locals()
+
+@auth.requires_login()
+def travel_place():
+    response.files.append(URL('static', 'css/background_travelagency.css'))
+    response.files.append(URL('static', 'css/box_fuel.css'))
+    postals = db(db.travel_agency.ID_TA==request.args[0]).select()
+    phones = db(db.Travel_Agency_2.ID_TA_2==request.args[0]).select(db.Travel_Agency_2.Phone_TA)
+    tour_package = db(db.Travel_Agency_2.ID_TA_2==request.args[0]).select(db.Travel_Agency_2.Tour_Package_TA)
+    db.visit_places.Place_ID.default = request.args[0]
+    db.visit_places.Place_ID.readable = False
+    db.visit_places.Place_ID.writable = False
+
+    db.visit_places.RU_ID_Place.readable = False
+    db.visit_places.RU_ID_Place.writable = False
+
+    form = SQLFORM(db.visit_places).process()
+    comments = db(db.visit_places.Place_ID==request.args[0]).select()
+
+    db.visit_places.RU_ID_Place.default = db.visit_places.created_by
+    return locals()
+
+
+
+
+
+def index():
+    """
+    example action using the internationalization operator T and flash
+    rendered by views/default/index.html or views/generic.html
+
+    if you need a simple wiki simply replace the two lines below with:
+    return auth.wiki()
+    """
+    #rows = db(db.blog_post).select()
+    #response.flash = T("Welcome to Incredible Varanasi")
+    redirect(URL('home'))
+    return locals()
+#@auth.requires_login()
+
+def comment():
+    x = request.args[0]
+    y = request.args[1]
+    postals = db(db.visit_reply.postid==x).select()
+    db.visit_reply.postid.default = x
+    db.visit_reply.postid.readable = False
+    db.visit_reply.postid.writable = False
+    form = SQLFORM(db.visit_reply).process()
+
+    if form.accepted:
+        postals = db(db.visit_reply.postid==request.args[0]).select()
+    return locals()
+    
+def create():
+    x = "Created by: Mehul Jain"
+    return x
+def show():
+    return "Team MADS"
+
+def user():
+    """
+    exposes:
+    http://..../[app]/default/user/login
+    http://..../[app]/default/user/logout
+    http://..../[app]/default/user/register
+    http://..../[app]/default/user/profile
+    http://..../[app]/default/user/retrieve_password
+    http://..../[app]/default/user/change_password
+    http://..../[app]/default/user/manage_users (requires membership in
+    use @auth.requires_login()
+        @auth.requires_membership('group name')
+        @auth.requires_permission('read','table name',record_id)
+    to decorate functions that need access control
+    """
+    return dict(form=auth())
+
+
+@cache.action()
+def download():
+    """
+    allows downloading of uploaded files
+    http://..../[app]/default/download/[filename]
+    """
+    return response.download(request, db)
+
+
+def call():
+    """
+    exposes services. for example:
+    http://..../[app]/default/call/jsonrpc
+    decorate with @services.jsonrpc the functions to expose
+    supports xml, json, xmlrpc, jsonrpc, amfrpc, rss, csv
+    """
+    return service()
+
+
+@auth.requires_login()
+def api():
+    """
+    this is example of API with access control
+    WEB2PY provides Hypermedia API (Collection+JSON) Experimental
+    """
+    from gluon.contrib.hypermedia import Collection
+    rules = {
+        '<tablename>': {'GET':{},'POST':{},'PUT':{},'DELETE':{}},
+        }
+    return Collection(db).process(request,response,rules)

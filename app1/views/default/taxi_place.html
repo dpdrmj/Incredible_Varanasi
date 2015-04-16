@@ -1,0 +1,46 @@
+{{extend 'check.html'}}
+{{for postal in postals:}}
+<h1 style="color:white;text-align:center;font-size:200%">{{=postal.Name_TS}}</h1>
+
+
+<p></br></p>
+<div class="boxed">
+<table style="width:100%">
+<tr>
+    <td width=20% style="padding:0px 0px 0px 30px;color:white;font face=verdana">Taxis Available</td>
+    <td width=20% style="padding:0px 0px 0px 30px;color:white;font face=verdana">{{for type in cartypes:}}
+            {{=type.Car_Types_TS}}<br />
+            {{pass}}</td>
+    <td style="padding:0px 0px 0px 30px;color:white;font face=verdana">{{for price in carprices:}}
+            {{=price.Car_Price_TS}}<br />
+            {{pass}}</td>
+</tr>
+<tr>
+      <td style="padding:0px 0px 0px 30px;color:white;font face=verdana">Address</td>
+    <td style ="padding:0px 0px 0px 30px;color:white;font face=verdana">{{=postal.Street_TS}}<br />
+        {{=postal.City_TS}} <br />
+     {{=postal.State_TS}}-{{=postal.Zip_TS}}<br />
+        {{=postal.Website_TS}}</td>
+        </tr>
+
+<tr>
+    <td style="padding:0px 0px 0px 30px;color:white;font face=verdana">Contact:</td>
+    <td style="padding:0px 0px 0px 30px;color:white;font face=verdana">{{for phone in phones:}}
+            {{=phone.Phone_TS}}<br />
+            {{pass}}</td>
+</tr>
+</table>
+</div>
+{{pass}}
+<div class="boxed" style="margin-top: 20px;">
+    {{for comment in comments:}}
+
+ <div class="well"><strong>{{=comment.User_Comment_Place}}</strong><br/>Rated : {{=comment.User_Rating_Place}}/5<br/><a href={{=URL('comment',args=[comment.id,comment.User_Comment_Place])}}>Comment</a><br />Posted on {{=comment.created_on}} by {{=comment.created_by.first_name}} {{=comment.created_by.last_name}}</p>
+    </div>
+{{pass}}
+
+
+<div class="boxed" style="color:white;">
+{{=form}}
+</div>
+</div>

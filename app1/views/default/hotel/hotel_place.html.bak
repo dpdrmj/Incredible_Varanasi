@@ -1,0 +1,23 @@
+{{extend 'check.html'}}
+<h1 style="color:black;text-align:center;font-size:200%"> Hotel Name </h1>
+
+<div style="text-align: center">
+	<input type=button style="background-color:gray;width: 500px;height: 45px;color:black" onClick="parent.location='hotel.html'" value='Home'><!--
+ --><input type=button style="background-color:white;width: 500px;height: 45px;color:black" onClick="parent.location='contact_us_hotel.html'" value='Contact Us'>
+</div>
+
+<p></br></p>
+<div class="boxed">
+<table style="width:100%">
+<tr>
+	<td>
+		<p style="color:white;font-size:200%;padding:0px 0px 0px 30px">Our Room Rates (per day)<br/></p>
+		<p style="padding:0px 0px 0px 30px">
+		<ul>
+			<li><p style="font-size:150%;color:white">Type 1:	A</p></br></li>
+			<li><p style="font-size:150%;color:white">Type 2:	B</p></br></li>
+		</ul>
+		</p>
+	</td>
+</table>
+</div>

@@ -1,0 +1,7 @@
+{{extend 'check.html'}}
+<h1 style="color:white;">{{=y}}</h1>
+{{for postal in postals:}}
+{{=postal.reply}}
+,mmmmmmmmmm{{=y}} ,m,mmmm
+{{pass}}
+{{=form}}

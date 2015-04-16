@@ -1,0 +1,292 @@
+(dp1
+S'output'
+p2
+S"<class 'sqlite3.OperationalError'> no such table: Heritage_Area"
+p3
+sS'layer'
+p4
+S'C:\\Users\\lenovo\\Downloads\\Compressed\\web2py\\applications\\app1\\models\\db1.py'
+p5
+sS'code'
+p6
+S"# -*- coding: utf-8 -*-\ndb.define_table('blog_post',\n                Field('title',requires=IS_NOT_EMPTY()),\n                Field('body','text',requires=IS_NOT_EMPTY()),\n                auth.signature\n                )\ndb.define_table('places',\n                Field('Place_ID'),\n                Field('place_name'),\n                Field('place_type'),\n                Field('rating','integer')\n               )\ndb.define_table('place_distance',\n                Field('place1'),\n                Field('place2'),\n                Field('distance')\n)\n# -*- coding: utf-8 -*-\n# -*- coding: utf-8 -*-\ndb.define_table('Registered_User_1',\n                Field('ID_RU_1','string',requires=IS_NOT_EMPTY()),\n               Field('first_name_RU','string'),\n               Field('middle_name_RU','string'),\n               Field('last_name_RU','string'),\n               Field('email_id_RU','string'),\n               Field('Gender_RU','string'),\n               Field('Apartment_RU','string'),\n               Field('Street_RU','string'),\n               Field('City_RU','string'),\n               Field('State_RU','string'),\n               Field('Zip_RU','integer'),\n               Field('DOB_RU','date'),\n               primarykey=['ID_RU_1'],\n               migrate=False\n)\ndb.define_table('Registered_User_2',\n               Field('ID_RU_2','string',requires=IS_NOT_EMPTY()),\n               Field('Phone_RU','integer'),\n               primarkey=['ID_RU_2','Phone_RU'],\n               migrate=False\n)\ndb.define_table('Local_Handlooms_1            ',\n               Field('ID_LH_1','string',requires=IS_NOT_EMPTY()),\n               Field('Name_LH','string'),\n               Field('Street_RU','string'),\n               Field('City_RU','string'),\n               Field('State_RU','string'),\n               Field('Zip_RU','integer'),\n               Field('Rating_LH','integer'),\n               Field('Opening_LH','time'),\n               Field('Closing_LH','time'),\n               primarykey=['ID_LH_1'],\n               migrate=False\n)\ndb.define_table('Local_Handlooms_2',\n               Field('ID_LH_2','string',requires=IS_NOT_EMPTY()),\n               Field('Phone_LH','integer'),\n               primarkey=['ID_LH_2','Phone_LH'],\n               migrate=False\n)\ndb.define_table('Recreation_Hub',\n               Field('ID_RH','string',requires=IS_NOT_EMPTY()),\n               Field('Name_RH','string'),\n               Field('Street_RH','string'),\n               Field('City_RH','string'),\n               Field('State_RH','string'),\n               Field('Zip_RH','integer'),\n               Field('Rating_RH','integer'),\n               Field('Opening_RH','time'),\n               Field('Closing_RH','time'),\n               primarykey=['ID_RH'],\n               migrate=False\n)\ndb.define_table('Bank_1',\n               Field('ID_BK_1','string',requires=IS_NOT_EMPTY()),\n               Field('Name_BK','string'),\n               Field('Street_BK','string'),\n               Field('City_BK','string'),\n               Field('State_BK','string'),\n               Field('Zip_BK','integer'),\n               Field('Opening_BK','time'),\n               Field('Closing_BK','time'),\n               primarykey=['ID_BK_1'],\n               migrate=False\n)\ndb.define_table('Bank_2',\n               Field('ID_BK_2','string',requires=IS_NOT_EMPTY()),\n               Field('Phone_BK','integer'),\n               primarkey=['ID_BK_2','Phone_BK'],\n               migrate=False\n)\ndb.define_table('Spiritual_Hub',\n               Field('ID_SH','string',requires=IS_NOT_EMPTY()),\n               Field('Name_SH','string'),\n               Field('Description_SH','string'),\n               Field('Street_SH','string'),\n               Field('City_SH','string'),\n               Field('State_SH','string'),\n               Field('Zip_SH','integer'),\n               Field('Rating_SH','integer'),\n               Field('Opening_SH','time'),\n               Field('Closing_SH','time'),\n               primarykey=['ID_SH'],\n               migrate=False\n)\ndb.define_table('Hotels_1',\n               Field('ID_HT_1','string',requires=IS_NOT_EMPTY()),\n               Field('Name_HT','string'),\n               Field('Description_HT','string'),\n               Field('Street_HT','string'),\n               Field('City_HT','string'),\n               Field('State_HT','string'),\n               Field('Zip_HT','integer'),\n               Field('Rating_HT','integer'),\n               Field('Website_HT','string'),\n               primarykey=['ID_HT_1'],\n               migrate=False\n)\ndb.define_table('Hotels_2',\n               Field('ID_HT_2','string',requires=IS_NOT_EMPTY()),\n               Field('Phone_HT','integer'),\n               primarkey=['ID_HT_2','Phone_HT'],\n               migrate=False\n)\ndb.define_table('Heritage_Area',\n               Field('ID_HA','string',requires=IS_NOT_EMPTY()),\n               Field('Name_HA','string'),\n               Field('Description_HA','string'),\n               Field('Street_HA','string'),\n               Field('City_HA','string'),\n               Field('State_HA','string'),\n               Field('Zip_HA','integer'),\n               Field('Rating_HA','integer'),\n               Field('Ticket_Price_HA','integer'),\n               Field('Opening_HA','time'),\n               Field('Closing_HA','time'),\n               primarykey=['ID_HA'],\n               migrate=False\n)\ndb.define_table('Entertainment_Hub',\n               Field('ID_EH','string',requires=IS_NOT_EMPTY()),\n               Field('Name_EH','string'),\n               Field('Description_EH','string'),\n               Field('Street_EH','string'),\n               Field('City_EH','string'),\n               Field('State_EH','string'),\n               Field('Zip_EH','integer'),\n               Field('Rating_EH','integer'),\n               Field('Ticket_Price_EH','integer'),\n               Field('Opening_EH','time'),\n               Field('Closing_EH','time'),\n               primarykey=['ID_EH'],\n               migrate=False\n)\ndb.define_table('Travel_Agency_1',\n               Field('ID_TA_1','string',requires=IS_NOT_EMPTY()),\n               Field('Name_TA','string'),\n               Field('Description_TA','string'),\n               Field('Street_TA','string'),\n               Field('City_TA','string'),\n               Field('State_TA','string'),\n               Field('Zip_TA','integer'),\n               Field('Rating_TA','integer'),\n               Field('Website_TA','string'),\n               primarykey=['ID_TA_1'],\n               migrate=False\n)\ndb.define_table('Travel_Agency_2',\n               Field('ID_TA_2','string',requires=IS_NOT_EMPTY()),\n               Field('Phone_TA','integer'),\n               Field('Tour_Package_TA','string'),\n               primarkey=['ID_TA_2','Phone_TA','Tour_Package_TA'],\n               migrate=False\n)\ndb.define_table('Restaurant_1',\n               Field('ID_RS_1','string',requires=IS_NOT_EMPTY()),\n               Field('Name_RS','string'),\n               Field('Description_RS','string'),\n               Field('Street_RS','string'),\n               Field('City_RS','string'),\n               Field('State_RS','string'),\n               Field('Zip_RS','integer'),\n               Field('Opening_RS','time'),\n               Field('Closing_RS','time'),\n               Field('Rating_RS','integer'),\n               Field('Website_RS','string'),\n               primarykey=['ID_RS_1'],\n               migrate=False\n)\ndb.define_table('Restaurant_2',\n               Field('ID_RS_2','string',requires=IS_NOT_EMPTY()),\n               Field('Phone_RS','integer'),\n               primarkey=['ID_RS_2','Phone_RS'],\n               migrate=False\n)\ndb.define_table('Taxi_Service_1',\n               Field('ID_TS_1','string',requires=IS_NOT_EMPTY()),\n               Field('Name_TS','string'),\n               Field('Street_TS','string'),\n               Field('City_TS','string'),\n               Field('State_TS','string'),\n               Field('Zip_TS','integer'),\n               Field('Rating_TS','integer'),\n               Field('Website_TS','string'),\n               primarykey=['ID_TS_1'],\n               migrate=False\n)\ndb.define_table('Taxi_Service_2',\n               Field('ID_TS_2','string',requires=IS_NOT_EMPTY()),\n               Field('Phone_TS','integer'),\n               Field('Car_Types_TS','string'),\n               primarkey=['ID_TS_2','Phone_TS','Car_Types_TS'],\n               migrate=False\n)\ndb.define_table('Fuel_Agency_1',\n               Field('ID_FA_1','string',requires=IS_NOT_EMPTY()),\n               Field('Name_FA','string'),\n               Field('Street_FA','string'),\n               Field('City_FA','string'),\n               Field('State_FA','string'),\n               Field('Zip_FA','integer'),\n               Field('ID_FC_R','string',requires=IS_NOT_EMPTY()),\n               primarykey=['ID_FA_1'],\n               migrate=False\n)\ndb.define_table('Fuel_Agency_2',\n               Field('ID_FA_2','string',requires=IS_NOT_EMPTY()),\n               Field('Phone_FA','integer'),\n               primarkey=['ID_FA_2','Phone_FA'],\n               migrate=False\n)\ndb.define_table('Fuel_Company',\n               Field('ID_FC','string',requires=IS_NOT_EMPTY()),\n               Field('Name_FC','string'),\n               Field('Dieselperlitre_FC','integer'),\n               Field('Petrolperlitre_FC','integer'),\n               primarkey=['ID_FC','Phone_FA'],\n               migrate=False\n)\n\ndb.define_table('check_table',\n                Field('name','string'),\n                Field('amount','integer')\n)\n\ndb.define_table('visit_places',\n                Field('RU_ID_Place','string',requires=IS_NOT_EMPTY()),\n                Field('Place_ID','string',requires=IS_NOT_EMPTY()),\n                Field('User_Comment_Place','text'),\n                Field('User_Rating_Place','integer'),\n                auth.signature\n\n)\n\n\ndb.define_table('visit_reply',\n                Field('post_id','integer'),\n                Field('reply','string',requires=IS_NOT_EMPTY()),\n                auth.signature\n               )\ndb.executesql('drop table Heritage_Area')\n"
+p7
+sS'snapshot'
+p8
+(dp9
+S'exception'
+p10
+(dp11
+S'__module__'
+p12
+S"'sqlite3'"
+p13
+sS'__getslice__'
+p14
+S"<method-wrapper '__getslice__' of OperationalError object>"
+p15
+sS'__str__'
+p16
+S"<method-wrapper '__str__' of OperationalError object>"
+p17
+sS'__reduce__'
+p18
+S'<built-in method __reduce__ of OperationalError object>'
+p19
+sS'__dict__'
+p20
+S'{}'
+p21
+sS'__sizeof__'
+p22
+S'<built-in method __sizeof__ of OperationalError object>'
+p23
+sS'__weakref__'
+p24
+S'None'
+p25
+sS'__init__'
+p26
+S"<method-wrapper '__init__' of OperationalError object>"
+p27
+sS'__setattr__'
+p28
+S"<method-wrapper '__setattr__' of OperationalError object>"
+p29
+sS'__reduce_ex__'
+p30
+S'<built-in method __reduce_ex__ of OperationalError object>'
+p31
+sS'__new__'
+p32
+S'<built-in method __new__ of type object>'
+p33
+sS'__format__'
+p34
+S'<built-in method __format__ of OperationalError object>'
+p35
+sS'__class__'
+p36
+S"<class 'sqlite3.OperationalError'>"
+p37
+sS'__doc__'
+p38
+S'None'
+p39
+sS'__getitem__'
+p40
+S"<method-wrapper '__getitem__' of OperationalError object>"
+p41
+sS'__setstate__'
+p42
+S'<built-in method __setstate__ of OperationalError object>'
+p43
+sS'__getattribute__'
+p44
+S"<method-wrapper '__getattribute__' of OperationalError object>"
+p45
+sS'args'
+p46
+S"('no such table: Heritage_Area',)"
+p47
+sS'__subclasshook__'
+p48
+S'<built-in method __subclasshook__ of type object>'
+p49
+sS'__unicode__'
+p50
+S'<built-in method __unicode__ of OperationalError object>'
+p51
+sS'__delattr__'
+p52
+S"<method-wrapper '__delattr__' of OperationalError object>"
+p53
+sS'__repr__'
+p54
+S"<method-wrapper '__repr__' of OperationalError object>"
+p55
+sS'__hash__'
+p56
+S"<method-wrapper '__hash__' of OperationalError object>"
+p57
+ssS'evalue'
+p58
+S'no such table: Heritage_Area'
+p59
+sS'request'
+p60
+cgluon.html
+XML_unpickle
+p61
+(S'sU_\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">ajax</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">application</td><td style="vertical-align:top;">:</td><td><div>app1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">args</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cid</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">client</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">controller</td><td style="vertical-align:top;">:</td><td><div>appadmin</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cookies</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">session_id_admin</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-6f040aac-ee5a-4330-99ae-51048b65043a<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_app1</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-4537c5eb-7c9b-42d2-bf9f-4637ea67f288<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_welcome</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-0ce102b4-a115-47ed-8309-d0538eb4f9b3<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">env</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT</td><td style="vertical-align:top;">:</td><td><div>text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT_ENCODING</td><td style="vertical-align:top;">:</td><td><div>gzip,deflate,sdch</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_ACCEPT_LANGUAGE</td><td style="vertical-align:top;">:</td><td><div>en-US,en;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_CACHE_CONTROL</td><td style="vertical-align:top;">:</td><td><div>max-age=0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_CONNECTION</td><td style="vertical-align:top;">:</td><td><div>keep-alive</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_COOKIE</td><td style="vertical-align:top;">:</td><td><div>__utma=96992031.1615220688.1414529826.1414529826.1414529826.1; __utmz=96992031.1414529826.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); session_id_welcome=127.0.0.1-0ce102b4-a115-47ed-8309-d0538eb4f9b3; session_id_app1=127.0.0.1-4537c5eb-7c9b-42d2-bf9f-4637ea67f288; session_id_admin=127.0.0.1-6f040aac-ee5a-4330-99ae-51048b65043a</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_HOST</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1:8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_REFERER</td><td style="vertical-align:top;">:</td><td><div>http://127.0.0.1:8000/admin/default/design/app1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">HTTP_USER_AGENT</td><td style="vertical-align:top;">:</td><td><div>Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.111 Safari/537.36</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">PATH_INFO</td><td style="vertical-align:top;">:</td><td><div>/app1/appadmin/index</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">QUERY_STRING</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REMOTE_ADDR</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REMOTE_PORT</td><td style="vertical-align:top;">:</td><td><div>58784</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">REQUEST_METHOD</td><td style="vertical-align:top;">:</td><td><div>GET</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SCRIPT_NAME</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_NAME</td><td style="vertical-align:top;">:</td><td><div>ITSMJTHING</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_PORT</td><td style="vertical-align:top;">:</td><td><div>8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_PROTOCOL</td><td style="vertical-align:top;">:</td><td><div>HTTP/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">SERVER_SOFTWARE</td><td style="vertical-align:top;">:</td><td><div>Rocket 1.2.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">app_folders</td><td style="vertical-align:top;">:</td><td><div>set([&#x27;C:\\\\Users\\\\lenovo\\\\Downloads\\\\Compressed\\\\web2py\\\\applications\\\\admin\\\\&#x27;, &#x27;C:\\\\Users\\\\lenovo\\\\Downloads\\\\Compressed\\\\web2py\\\\applications\\\\app1\\\\&#x27;, &#x27;C:\\\\Users\\\\lenovo\\\\Downloads\\\\Compressed\\\\web2py\\\\applications\\\\welcome\\\\&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">applications_parent</td><td style="vertical-align:top;">:</td><td><div>C:\\Users\\lenovo\\Downloads\\Compressed\\web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_args</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_options</td><td style="vertical-align:top;">:</td><td><div>&lt;Values at 0x2f572b0: {&#x27;verbose&#x27;: False, &#x27;ip&#x27;: &#x27;127.0.0.1&#x27;, &#x27;debuglevel&#x27;: 30, &#x27;with_scheduler&#x27;: False, &#x27;ips&#x27;: [&#x27;10.9.10.141&#x27;, &#x27;fe80::806f:6494:2119:cd7b%4&#x27;], &#x27;shutdown_timeout&#x27;: 5, &#x27;taskbar&#x27;: False, &#x27;with_coverage&#x27;: False, &#x27;scheduler_groups&#x27;: None, &#x27;port&#x27;: 8000, &#x27;maxthreads&#x27;: None, &#x27;softcron&#x27;: False, &#x27;server_name&#x27;: &#x27;ITSMJTHING&#x27;, &#x27;bpython&#x27;: False, &#x27;nogui&#x27;: False, &#x27;pid_filename&#x27;: &#x27;httpserver.pid&#x27;, &#x27;extcron&#x27;: False, &#x27;runcron&#x27;: False, &#x27;run_system_tests&#x27;: False, &#x27;test&#x27;: None, &#x27;folder&#x27;: &#x27;C:\\\\Users\\\\lenovo\\\\Downloads\\\\Compressed\\\\web2py&#x27;, &#x27;config&#x27;: &#x27;&#x27;, &#x27;minthreads&#x27;: None, &#x27;shell&#x27;: None, &#x27;run&#x27;: &#x27;&#x27;, &#x27;log_filename&#x27;: &#x27;httpserver.log&#x27;, &#x27;profiler_dir&#x27;: None, &#x27;args&#x27;: [&#x27;&#x27;], &#x27;socket_timeout&#x27;: 5, &#x27;ssl_ca_certificate&#x27;: None, &#x27;scheduler&#x27;: None, &#x27;interfaces&#x27;: None, &#x27;ssl_private_key&#x27;: &#x27;&#x27;, &#x27;gae&#x27;: None, &#x27;password&#x27;: &#x27;&lt;ask&gt;&#x27;, &#x27;request_queue_size&#x27;: 5, &#x27;ssl_certificate&#x27;: &#x27;&#x27;, &#x27;cronjob&#x27;: False, &#x27;numthreads&#x27;: None, &#x27;quiet&#x27;: False, &#x27;import_models&#x27;: False, &#x27;timeout&#x27;: 10, &#x27;plain&#x27;: False, &#x27;nobanner&#x27;: False}&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">db_sessions</td><td style="vertical-align:top;">:</td><td><div>set([])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">debugging</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">gluon_parent</td><td style="vertical-align:top;">:</td><td><div>C:\\Users\\lenovo\\Downloads\\Compressed\\web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept</td><td style="vertical-align:top;">:</td><td><div>text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept_encoding</td><td style="vertical-align:top;">:</td><td><div>gzip,deflate,sdch</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_accept_language</td><td style="vertical-align:top;">:</td><td><div>en-US,en;q=0.8</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_cache_control</td><td style="vertical-align:top;">:</td><td><div>max-age=0</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_connection</td><td style="vertical-align:top;">:</td><td><div>keep-alive</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_cookie</td><td style="vertical-align:top;">:</td><td><div>__utma=96992031.1615220688.1414529826.1414529826.1414529826.1; __utmz=96992031.1414529826.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); session_id_welcome=127.0.0.1-0ce102b4-a115-47ed-8309-d0538eb4f9b3; session_id_app1=127.0.0.1-4537c5eb-7c9b-42d2-bf9f-4637ea67f288; session_id_admin=127.0.0.1-6f040aac-ee5a-4330-99ae-51048b65043a</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_host</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1:8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_referer</td><td style="vertical-align:top;">:</td><td><div>http://127.0.0.1:8000/admin/default/design/app1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">http_user_agent</td><td style="vertical-align:top;">:</td><td><div>Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.111 Safari/537.36</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_jython</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_pypy</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_source</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">local_hosts</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>ITSMJTHING</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>::1</div></td></tr><tr><td><div>fe80::806f:6494:2119:cd7b%4</div></td></tr><tr><td><div>10.9.10.141</div></td></tr><tr><td><div>127.0.0.1</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path_info</td><td style="vertical-align:top;">:</td><td><div>/app1/appadmin/index</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">query_string</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">remote_addr</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">remote_port</td><td style="vertical-align:top;">:</td><td><div>58784</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">request_method</td><td style="vertical-align:top;">:</td><td><div>GET</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">request_uri</td><td style="vertical-align:top;">:</td><td><div>/app1/appadmin/index</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">script_name</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_name</td><td style="vertical-align:top;">:</td><td><div>ITSMJTHING</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_port</td><td style="vertical-align:top;">:</td><td><div>8000</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_protocol</td><td style="vertical-align:top;">:</td><td><div>HTTP/1.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">server_software</td><td style="vertical-align:top;">:</td><td><div>Rocket 1.2.6</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_path</td><td style="vertical-align:top;">:</td><td><div>C:\\Users\\lenovo\\Downloads\\Compressed\\web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_version</td><td style="vertical-align:top;">:</td><td><div>2.9.11-stable+timestamp.2014.09.15.23.35.11</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.errors</td><td style="vertical-align:top;">:</td><td><div>&lt;open file &#x27;&lt;stderr&gt;&#x27;, mode &#x27;w&#x27; at 0x01CA60D0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.file_wrapper</td><td style="vertical-align:top;">:</td><td><div>&lt;class wsgiref.util.FileWrapper at 0x02062B58&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.input</td><td style="vertical-align:top;">:</td><td><div>&lt;socket._fileobject object at 0x06C90570&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.multiprocess</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.multithread</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.run_once</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.url_scheme</td><td style="vertical-align:top;">:</td><td><div>http</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi.version</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>1</div></td></tr><tr><td><div>0</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_errors</td><td style="vertical-align:top;">:</td><td><div>&lt;open file &#x27;&lt;stderr&gt;&#x27;, mode &#x27;w&#x27; at 0x01CA60D0&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_file_wrapper</td><td style="vertical-align:top;">:</td><td><div>&lt;class wsgiref.util.FileWrapper at 0x02062B58&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_input</td><td style="vertical-align:top;">:</td><td><div>&lt;socket._fileobject object at 0x06C90570&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_multiprocess</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_multithread</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_run_once</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_url_scheme</td><td style="vertical-align:top;">:</td><td><div>http</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi_version</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>1</div></td></tr><tr><td><div>0</div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">extension</td><td style="vertical-align:top;">:</td><td><div>html</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">folder</td><td style="vertical-align:top;">:</td><td><div>C:\\Users\\lenovo\\Downloads\\Compressed\\web2py\\applications\\app1\\</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">function</td><td style="vertical-align:top;">:</td><td><div>index</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">global_settings</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">app_folders</td><td style="vertical-align:top;">:</td><td><div>set([&#x27;C:\\\\Users\\\\lenovo\\\\Downloads\\\\Compressed\\\\web2py\\\\applications\\\\admin\\\\&#x27;, &#x27;C:\\\\Users\\\\lenovo\\\\Downloads\\\\Compressed\\\\web2py\\\\applications\\\\app1\\\\&#x27;, &#x27;C:\\\\Users\\\\lenovo\\\\Downloads\\\\Compressed\\\\web2py\\\\applications\\\\welcome\\\\&#x27;])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">applications_parent</td><td style="vertical-align:top;">:</td><td><div>C:\\Users\\lenovo\\Downloads\\Compressed\\web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_args</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cmd_options</td><td style="vertical-align:top;">:</td><td><div>&lt;Values at 0x2f572b0: {&#x27;verbose&#x27;: False, &#x27;ip&#x27;: &#x27;127.0.0.1&#x27;, &#x27;debuglevel&#x27;: 30, &#x27;with_scheduler&#x27;: False, &#x27;ips&#x27;: [&#x27;10.9.10.141&#x27;, &#x27;fe80::806f:6494:2119:cd7b%4&#x27;], &#x27;shutdown_timeout&#x27;: 5, &#x27;taskbar&#x27;: False, &#x27;with_coverage&#x27;: False, &#x27;scheduler_groups&#x27;: None, &#x27;port&#x27;: 8000, &#x27;maxthreads&#x27;: None, &#x27;softcron&#x27;: False, &#x27;server_name&#x27;: &#x27;ITSMJTHING&#x27;, &#x27;bpython&#x27;: False, &#x27;nogui&#x27;: False, &#x27;pid_filename&#x27;: &#x27;httpserver.pid&#x27;, &#x27;extcron&#x27;: False, &#x27;runcron&#x27;: False, &#x27;run_system_tests&#x27;: False, &#x27;test&#x27;: None, &#x27;folder&#x27;: &#x27;C:\\\\Users\\\\lenovo\\\\Downloads\\\\Compressed\\\\web2py&#x27;, &#x27;config&#x27;: &#x27;&#x27;, &#x27;minthreads&#x27;: None, &#x27;shell&#x27;: None, &#x27;run&#x27;: &#x27;&#x27;, &#x27;log_filename&#x27;: &#x27;httpserver.log&#x27;, &#x27;profiler_dir&#x27;: None, &#x27;args&#x27;: [&#x27;&#x27;], &#x27;socket_timeout&#x27;: 5, &#x27;ssl_ca_certificate&#x27;: None, &#x27;scheduler&#x27;: None, &#x27;interfaces&#x27;: None, &#x27;ssl_private_key&#x27;: &#x27;&#x27;, &#x27;gae&#x27;: None, &#x27;password&#x27;: &#x27;&lt;ask&gt;&#x27;, &#x27;request_queue_size&#x27;: 5, &#x27;ssl_certificate&#x27;: &#x27;&#x27;, &#x27;cronjob&#x27;: False, &#x27;numthreads&#x27;: None, &#x27;quiet&#x27;: False, &#x27;import_models&#x27;: False, &#x27;timeout&#x27;: 10, &#x27;plain&#x27;: False, &#x27;nobanner&#x27;: False}&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">db_sessions</td><td style="vertical-align:top;">:</td><td><div>set([])</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">debugging</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">gluon_parent</td><td style="vertical-align:top;">:</td><td><div>C:\\Users\\lenovo\\Downloads\\Compressed\\web2py</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_jython</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_pypy</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_source</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">local_hosts</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>ITSMJTHING</div></td></tr><tr><td><div>::ffff:127.0.0.1</div></td></tr><tr><td><div>::1</div></td></tr><tr><td><div>fe80::806f:6494:2119:cd7b%4</div></td></tr><tr><td><div>10.9.10.141</div></td></tr><tr><td><div>127.0.0.1</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">web2py_version</td><td style="vertical-align:top;">:</td><td><div>2.9.11-stable+timestamp.2014.09.15.23.35.11</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_https</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_local</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_restful</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_sheduler</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">is_shell</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">now</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2014, 11, 5, 14, 17, 0, 407000)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">raw_args</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">raw_extension</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">url</td><td style="vertical-align:top;">:</td><td><div>/app1/appadmin/index</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">utcnow</td><td style="vertical-align:top;">:</td><td><div>datetime.datetime(2014, 11, 5, 8, 47, 0, 407000)</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">uuid</td><td style="vertical-align:top;">:</td><td><div>app1/127.0.0.1.2014-11-05.14-17-00.77423fda-7510-4c9c-8ead-bc490ece987f</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">wsgi</td><td style="vertical-align:top;">:</td><td><div>&lt;gluon.main.LazyWSGI object at 0x07967950&gt;</div></td></tr></table></div>'
+tRp62
+sS'frames'
+p63
+(lp64
+(dp65
+S'file'
+p66
+S'C:\\Users\\lenovo\\Downloads\\Compressed\\web2py\\gluon\\restricted.py'
+p67
+sS'dump'
+p68
+(dp69
+sS'lnum'
+p70
+I224
+sS'lines'
+p71
+(dp72
+sS'call'
+p73
+S'(code="# -*- coding: utf-8 -*-\\ndb.define_table(\'blog_po...     )\\ndb.executesql(\'drop table Heritage_Area\')\\n", environment={\'A\': <class \'gluon.html.A\'>, \'ANY_OF\': <class \'gluon.validators.ANY_OF\'>, \'ASSIGNJS\': <function ASSIGNJS>, \'Auth\': <class \'gluon.tools.Auth\'>, \'B\': <class \'gluon.html.B\'>, \'BEAUTIFY\': <class \'gluon.html.BEAUTIFY\'>, \'BODY\': <class \'gluon.html.BODY\'>, \'BR\': <class \'gluon.html.BR\'>, \'BUTTON\': <class \'gluon.html.BUTTON\'>, \'CAT\': <class \'gluon.html.CAT\'>, ...}, layer=r\'C:\\Users\\lenovo\\Downloads\\Compressed\\web2py\\applications\\app1\\models\\db1.py\')'
+p74
+sS'func'
+p75
+S'restricted'
+p76
+sa(dp77
+g66
+S'C:\\Users\\lenovo\\Downloads\\Compressed\\web2py\\applications\\app1\\models\\db1.py'
+p78
+sg68
+(dp79
+S'db.executesql'
+p80
+S'<bound method DAL.executesql of <DAL uri="sqlite://storage.sqlite">>'
+p81
+sS'db'
+p82
+S'<DAL uri="sqlite://storage.sqlite">'
+p83
+ssg70
+I261
+sg71
+(dp84
+I256
+S"db.define_table('visit_reply',"
+p85
+sI257
+S"                Field('post_id','integer'),"
+p86
+sI258
+S"                Field('reply','string',requires=IS_NOT_EMPTY()),"
+p87
+sI259
+S'                auth.signature'
+p88
+sI260
+S'               )'
+p89
+sI261
+S"db.executesql('drop table Heritage_Area')"
+p90
+sI252
+S''
+sI253
+S')'
+sI254
+S''
+sI255
+S''
+ssg73
+S'()'
+p91
+sg75
+S'<module>'
+p92
+sa(dp93
+g66
+S'C:\\Users\\lenovo\\Downloads\\Compressed\\web2py\\gluon\\dal.py'
+p94
+sg68
+(dp95
+sg70
+I8618
+sg71
+(dp96
+sg73
+S'(self=<DAL uri="sqlite://storage.sqlite">, query=\'drop table Heritage_Area\', placeholders=None, as_dict=False, fields=None, colnames=None, as_ordered_dict=False)'
+p97
+sg75
+S'executesql'
+p98
+sa(dp99
+g66
+S'C:\\Users\\lenovo\\Downloads\\Compressed\\web2py\\gluon\\dal.py'
+p100
+sg68
+(dp101
+sg70
+I1967
+sg71
+(dp102
+sg73
+S"(self=<gluon.dal.SQLiteAdapter object>, *a=('drop table Heritage_Area',), **b={})"
+p103
+sg75
+S'execute'
+p104
+sa(dp105
+g66
+S'C:\\Users\\lenovo\\Downloads\\Compressed\\web2py\\gluon\\dal.py'
+p106
+sg68
+(dp107
+sg70
+I1961
+sg71
+(dp108
+sg73
+S"(self=<gluon.dal.SQLiteAdapter object>, *a=('drop table Heritage_Area',), **b={})"
+p109
+sg75
+S'log_execute'
+p110
+sasS'pyver'
+p111
+S'Python 2.7.6: C:\\Users\\lenovo\\Downloads\\Compressed\\web2py\\web2py.exe (prefix: )'
+p112
+sS'session'
+p113
+g61
+(S'sJ\x01\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">last_orderby</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">last_query</td><td style="vertical-align:top;">:</td><td><div>db.Heritage_Area.ID_HA!=&quot;&quot;</div></td></tr></table></div>'
+tRp114
+sS'etype'
+p115
+S"<class 'sqlite3.OperationalError'>"
+p116
+sS'date'
+p117
+S'Wed Nov 05 14:17:00 2014'
+p118
+sS'response'
+p119
+g61
+(S's\x12\x18\x00\x00<div><table><tr><td style="font-weight:bold;vertical-align:top;">body</td><td style="vertical-align:top;">:</td><td><div>&lt;cStringIO.StringO object at 0x07A20C60&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">cookies</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">session_id_app1</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-4537c5eb-7c9b-42d2-bf9f-4637ea67f288<table><tr><td style="font-weight:bold;vertical-align:top;">comment</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">domain</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">expires</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">httponly</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">max-age</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">path</td><td style="vertical-align:top;">:</td><td><div>/</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">secure</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">version</td><td style="vertical-align:top;">:</td><td><div></div></td></tr></table></div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">delimiters</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>{{</div></td></tr><tr><td><div>}}</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">files</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">flash</td><td style="vertical-align:top;">:</td><td><div></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">form_label_separator</td><td style="vertical-align:top;">:</td><td><div>: </div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">formstyle</td><td style="vertical-align:top;">:</td><td><div>table3cols</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">generic_patterns</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>*</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">headers</td><td style="vertical-align:top;">:</td><td><div><table><tr><td style="font-weight:bold;vertical-align:top;">X-Powered-By</td><td style="vertical-align:top;">:</td><td><div>web2py</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">menu</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">meta</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">models_to_run</td><td style="vertical-align:top;">:</td><td><div><table><tr><td><div>^\\w+\\.py$</div></td></tr><tr><td><div>^appadmin/\\w+\\.py$</div></td></tr><tr><td><div>^appadmin/index/\\w+\\.py$</div></td></tr></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">postprocessing</td><td style="vertical-align:top;">:</td><td><div><table></table></div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_client</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_cookie_compression_level</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_cookie_expires</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_cookie_key</td><td style="vertical-align:top;">:</td><td><div>None</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_data_name</td><td style="vertical-align:top;">:</td><td><div>session_data_app1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_file</td><td style="vertical-align:top;">:</td><td><div>&lt;open file &#x27;C:\\\\Users\\\\lenovo\\\\Downloads\\\\Compressed\\\\web2py\\\\applications\\\\app1\\\\sessions\\\\064\\\\0f5\\\\127.0.0.1-4537c5eb-7c9b-42d2-bf9f-4637ea67f288&#x27;, mode &#x27;rb+&#x27; at 0x06ED6390&gt;</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_filename</td><td style="vertical-align:top;">:</td><td><div>C:\\Users\\lenovo\\Downloads\\Compressed\\web2py\\applications\\app1\\sessions\\127.0.0.1-4537c5eb-7c9b-42d2-bf9f-4637ea67f288</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_hash</td><td style="vertical-align:top;">:</td><td><div>d85d20fd9441e313508d5e53997aadae</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id</td><td style="vertical-align:top;">:</td><td><div>127.0.0.1-4537c5eb-7c9b-42d2-bf9f-4637ea67f288</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_id_name</td><td style="vertical-align:top;">:</td><td><div>session_id_app1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_locked</td><td style="vertical-align:top;">:</td><td><div>True</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_masterapp</td><td style="vertical-align:top;">:</td><td><div>app1</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_new</td><td style="vertical-align:top;">:</td><td><div>False</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">session_storage_type</td><td style="vertical-align:top;">:</td><td><div>file</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">status</td><td style="vertical-align:top;">:</td><td><div>200</div></td></tr><tr><td style="font-weight:bold;vertical-align:top;">view</td><td style="vertical-align:top;">:</td><td><div>appadmin/index.html</div></td></tr></table></div>'
+tRp120
+sS'locals'
+p121
+(dp122
+S'a'
+S"('drop table Heritage_Area',)"
+p123
+sS'self'
+p124
+S'<gluon.dal.SQLiteAdapter object>'
+p125
+sS'b'
+g21
+sS'command'
+p126
+S"'drop table Heritage_Area'"
+p127
+sS't0'
+p128
+S'1415177220.608'
+p129
+sssS'traceback'
+p130
+S'Traceback (most recent call last):\n  File "gluon/restricted.py", line 224, in restricted\n  File "C:\\Users\\lenovo\\Downloads\\Compressed\\web2py\\applications\\app1\\models\\db1.py", line 261, in <module>\n    db.executesql(\'drop table Heritage_Area\')\n  File "gluon/dal.py", line 8618, in executesql\n  File "gluon/dal.py", line 1967, in execute\n  File "gluon/dal.py", line 1961, in log_execute\nOperationalError: no such table: Heritage_Area\n'
+p131
+s.

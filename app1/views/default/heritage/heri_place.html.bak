@@ -1,0 +1,26 @@
+{{extend 'check.html'}}
+<h1 style="color:black;text-align:center;font-size:200%"> Heritage Hub Name </h1>
+
+<!--<div style="text-align: center">
+	<input type=button style="background-color:gray;width: 500px;height: 45px;color:black" onClick="parent.location='heritage.html'" value='Home'><!--
+ --><input type=button style="background-color:white;width: 500px;height: 45px;color:black" onClick="parent.location='contact_us_heritage.html'" value='Contact Us'>
+</div>-->
+
+<p></br></p>
+<div class="boxed">
+<table style="width:100%">
+<tr>
+	<td>
+		<p style="font-size:200%;padding:0px 0px 0px 30px">Decription<br/></p>
+		<p style="font-size:130%;padding:0px 0px 0px 30px">
+			1<br/>2<br/>3<br/>4<br/>
+		</p>
+	</td>
+	<td>
+		<div style="text-align:right;padding:0px 200px 0px 0px">
+			<p style="font-size:120%;color:#3D3D3D"><b>Visiting Hours</b></p>
+			<p style="font-size:120%;color:#3D3D3D"><b>Ticket Price</b></p>
+		</div>
+	</td>
+</table>
+</div>

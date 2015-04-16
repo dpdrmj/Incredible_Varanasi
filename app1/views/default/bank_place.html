@@ -1,0 +1,39 @@
+{{extend 'check.html'}}
+{{for postal in postals:}}
+<h1 style="color:#fff;text-align:center;font-size:200%">{{=postal.Name_BK}}</h1>
+
+<p></br></p>
+<div class="boxed">
+<table style="width:100%">
+<tr>
+	<td style="padding:0px 0px 0px 30px;color:white;font face=verdana">Opening Time:</td>
+    <td>{{=postal.Opening_BK}} to {{=postal.Closing_BK}}</td>
+</tr>
+<tr>
+	<td style="padding:0px 0px 0px 30px;color:white;font face=verdana">Address:</td>
+    <td>{{=postal.Street_BK}}<br />
+        {{=postal.City_BK}} <br />
+     {{=postal.State_BK}}-{{=postal.Zip_BK}}</td>
+</tr>
+    <tr>
+      <td style="padding:0px 0px 0px 30px;color:white;font face=verdana">  Phone Number:</td>
+
+      <td>  {{for phone in phones:}}
+            {{=phone.Phone_BK}}<br />
+            {{pass}}
+      </td>
+    </tr>
+</table>
+</div>
+{{pass}}
+<div class="boxed" style="margin-top: 20px;">
+    {{for comment in comments:}}
+
+ <div class="well"><strong>{{=comment.User_Comment_Place}}</strong><br/>Rated : {{=comment.User_Rating_Place}}/5<br/><a href={{=URL('comment',args=[comment.id,comment.User_Comment_Place])}}>Comment</a><br />Posted on {{=comment.created_on}} by {{=comment.created_by.first_name}} {{=comment.created_by.last_name}}</p>
+    </div>
+{{pass}}
+
+</div>
+<div class="boxed">
+{{=form}}
+</div>

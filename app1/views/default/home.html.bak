@@ -1,0 +1,46 @@
+{{extend 'check.html'}}
+<h1 style="color:black;text-align:center; margin-top: 40px;"> INCREDIBLE VARANASI </h1>
+
+<!--<div style="text-align: center">
+	<input type=button style="background-color:gray;width: 150px;height: 45px;color:black" onClick="parent.location='homepage.html'" value='Home'>
+ <input type=button style="width: 150px;height: 45px;color:black" onClick="parent.location='about.html'" value='About Us'>
+</div>-->
+
+<div class="gallery">
+  <div class="first">
+      <a href="../image/entertainment.html"><img src="{{=URL('static','images/Ehub.jpg')}}" alt="Entertainment Hub" height="275" width="300" vspace="30"></a>
+  </div>
+  <div>
+	<a href="restaurant.html"><img src="{{=URL('static','images/rest.jpg')}}" alt="Restaurants" height="275" width="300" vspace="30"></a>
+  </div>
+  <div>
+	<a href="travelagency.html"><img src="{{=URL('static','images/tagency.png')}}" alt="Travel Agency" height="250" width="300" vspace="30"></a>
+  </div>
+  <div>
+	<a href="heritage.html"><img src="{{=URL('static','images/heri.jpg')}}" alt="Heritage Hub" height="275" width="300" vspace="30"></a>
+  </div>
+  <div>
+	<a href="bank.html"><img src="{{=URL('static','images/bank.jpg')}}" alt="Bank" height="275" width="300" vspace="30"></a>
+  </div>
+  <div>
+	<a href="handloom.html"><img src="{{=URL('static','images/handl.jpg')}}" alt="Handloom" height="275" width="300" vspace="30"></a>
+  </div>
+  <div>
+	<a href="hotel.html"><img src="{{=URL('static','images/hotel.jpg')}}" alt="Hotels" height="275" width="300" vspace="30"></a>
+  </div>
+  <div>
+	<a href="recreation.html"><img src="{{=URL('static','images/rec.jpg')}}" alt="Recreation Hub" height="275" width="300" vspace="30"></a>
+  </div>
+  <div>
+	<a href="spiritual.html"><img src="{{=URL('static','images/spirit.jpg')}}" alt="Spiritual Hub" height="275" width="300" vspace="30"></a>
+  </div>
+  <div>
+	<a href="taxiservice.html"><img src="{{=URL('static','images/taxi.jpg')}}" alt="Taxi Service" height="275" width="300" vspace="30"></a>
+  </div>
+  <div>
+	<a href="fuel_agency.html"><img src="{{=URL('static','images/fagency.jpg')}}" alt="Fuel Agency" height="275" width="300" vspace="30"></a>
+  </div>
+  <div>
+	<a href="fuel_company.html"><img src="{{=URL('static','images/fcompany.jpg')}}" alt="Fuel Company" height="275" width="300" vspace="30"></a>
+  </div>
+</div>

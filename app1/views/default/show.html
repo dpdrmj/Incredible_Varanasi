@@ -1,0 +1,6 @@
+{{extend 'layout.html'}}
+<h1>{{=post.title}}</h1>
+Posted on <i>{{=post.created_on}}</i> Posted by <i>{{=post.created_by.first_name}} {{=post.created_by.last_name}}</i>
+<p>
+    {{=post.body}}
+</p>

@@ -1,0 +1,32 @@
+{{extend 'check.html'}}
+
+{{extend 'layout.html'}}
+{{title=dict(
+         login='',
+         register=H1('Register'),
+         logout=H1('Logged out'),
+         profile=H1('Change your profile'),
+         change_password=H1('Change your password'),
+         request_reset_password=H1('Reset your password'),
+         reset_password=H1('Define a new password'),
+         verify_email=H1('Verification mail'),
+         retrieve_username=H1('Request username'),
+         not_authorized=H1('Denied!')
+         )}}
+{{=title[request.args(0)]}}
+{{=form}}
+{{if request.args(0)=='login':}}
+{{if not 'request_reset_password' in auth.settings.actions_disabled:}}
+<br/><a href="{{=URL(r=request,args='request_reset_password')}}">Forget Password</a>
+{{pass}}
+{{pass}}
+
+</div>
+<script language="javascript"><!--
+jQuery("#web2py_user_form input:visible:enabled:first").focus();
+{{if request.args(0)=='register':}}
+    web2py_validate_entropy(jQuery('#auth_user_password'),100);
+{{elif request.args(0) in ('change_password','reset_password'):}}
+    web2py_validate_entropy(jQuery('#no_table_new_password'),100);
+{{pass}}
+//--></script>

@@ -1,0 +1,41 @@
+{{extend 'check.html'}}
+{{for postal in postals:}}
+<h1 style="color:#5FF501;text-align:center;font-size:200%">{{=postal.Name_LH}}</h1>
+<p></br></p>
+<div class="boxed">
+<table style="width:100%">
+<tr>
+    <td style="padding:0px 0px 0px 30px;color:white;font face=verdana"><b>Description</b></td>
+    <td style ="padding:0px 0px 0px 30px;color:white;font face=verdana"><b>{{=postal.Description_LH}}</b></td>
+</tr>
+<tr>
+    <td style="padding:0px 0px 0px 30px;color:white;font face=verdana"><b>Timings</b></td>
+    <td style ="padding:0px 0px 0px 30px;color:white;font face=verdana"><b>{{=postal.Opening_LH}}--{{=postal.Closing_LH}}</b></td>
+</tr>
+<tr>
+      <td style="padding:0px 0px 0px 30px;color:white;font face=verdana"><b>Address</b></td>
+    <td style ="padding:0px 0px 0px 30px;color:white;font face=verdana"><b>{{=postal.Street_LH}}<br />
+        {{=postal.City_LH}} <br />
+     {{=postal.State_LH}}-{{=postal.Zip_LH}}</b></td>
+        </tr>
+
+<tr>
+<tr>
+    <td style="padding:0px 0px 0px 30px;color:white;font face=verdana">Contact</td>
+    <td style="padding:0px 0px 0px 30px;color:white;font face=verdana">{{for phone in phones:}}
+            {{=phone.Phone_LH}}<br />
+            {{pass}}</td>
+</tr>
+</table>
+{{pass}}
+</div>
+<div class="boxed" style="padding:50px 0px 0px 0px;">
+{{for comment in comments:}}
+
+ <div class="well"><strong>{{=comment.User_Comment_Place}}</strong><br/>Rated : {{=comment.User_Rating_Place}}/5<br/><a href={{=URL('comment',args=[comment.id,comment.User_Comment_Place])}}>Comment</a><br />Posted on {{=comment.created_on}} by {{=comment.created_by.first_name}} {{=comment.created_by.last_name}}</p>
+    </div>
+{{pass}}
+</div>
+<div class="boxed" style="color:yellow;">
+{{=form}}
+</div>

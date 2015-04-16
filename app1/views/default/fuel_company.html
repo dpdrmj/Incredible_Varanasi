@@ -1,0 +1,9 @@
+{{extend 'check.html'}}
+<h1 style="color:black; margin-top: 40px;"> Fuel Companies </h1>
+<table class="table" style="margin-top: 140px;">
+    {{for row in fc_rows:}}
+    <tr>
+        <td><a href={{=URL('fuelcompany_place',args=row[2])}}>{{=row[0]}}</a></td>
+    </tr>
+       {{pass}}
+</table>

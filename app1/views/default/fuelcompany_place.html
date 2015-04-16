@@ -1,0 +1,17 @@
+{{extend 'check.html'}}
+{{for postal in postals:}}
+
+<h1 style="color:black;text-align:center;font-size:200%">{{=postal.Name_FC}}</h1>
+<hr>
+
+<p></br></br></br></br></p>
+<div class="boxed">
+	<p style="font-size:150%">Our Prices (Rupees per Litre)</p></br>
+	<p style="padding:0px 0px 0px 30px">
+	<ul>
+		<li><p style="font-size:150%">Petrol: {{=postal.Dieselperlitre_FC}}	</p></br></li>
+		<li><p style="font-size:150%">Diesel: {{=postal.Petrolperlitre_FC}}	</p></br></li>
+	</ul>
+	</p>
+</div>
+{{pass}}

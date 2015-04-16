@@ -1,0 +1,30 @@
+{{extend 'check.html'}}
+{{for postal in postals:}}
+<h1 style="color:black;text-align:center;font-size:200%">{{=postal.Name_SH}}</h1>
+
+
+
+<p></br></p>
+<div class="boxed">
+<table style="width:100%">
+<tr>
+	<td width=50%>
+		<p style="font-size:100%;padding:40px 0px 0px 30px">{{=postal.Description_SH}}<br/></p>
+	</td>
+	<td width=50%>
+		<div style="padding:50px 0px 0px 50px">
+			<p style="font-size:120%;color:#3D3D3D"><b>Timings: {{=postal.Opening_SH}}--{{=postal.Closing_SH}}</b></p>
+		</div>
+	</td>
+</table>
+</div>
+{{pass}}
+<div class="boxed">
+    {{for comment in comments:}}
+ <div class="well"><strong>{{=comment.User_Comment_Place}}</strong><br/>Rated : {{=comment.User_Rating_Place}}/5<br/><a href={{=URL('comment',args=[comment.id,comment.User_Comment_Place])}}>Comment</a><br />Posted on {{=comment.created_on}} by {{=comment.created_by.first_name}} {{=comment.created_by.last_name}}</p>
+    </div>
+{{pass}}
+<div class="boxed" style="color:white;">
+{{=form}}
+</div>
+</div>

@@ -1,0 +1,35 @@
+{{extend 'check.html'}}
+{{for postal in postals:}}
+<h1 style="color:black;text-align:center;font-size:200%">{{=postal.Name_HA}}</h1>
+<!--<div style="text-align: center">
+	<input type=button style="background-color:gray;width: 500px;height: 45px;color:black" onClick="parent.location='heritage.html'" value='Home'><input type=button style="background-color:white;width: 500px;height: 45px;color:black" onClick="parent.location='contact_us_heritage.html'" value='Contact Us'>
+</div>-->
+
+<p></br></p>
+<div class="boxed">
+<table style="width:100%;">
+<tr>
+	<td width=50%>
+		<p style="font-size:120%;padding:30px 0px 0px 30px;color=black;font face=verdana"><b>{{=postal.Description_HA}}</b><br/></p>
+	</td>
+	<td width=50%>
+		<div style="text-align:right;padding:50px 0px 0px 40px">
+			<p style="font-size:120%;color:#3D3D3D;font face=verdana"><b>Visiting Hours: </b>{{=postal.Opening_HA}}--{{=postal.Closing_HA}}</p><br/><br/>
+			<p style="font-size:120%;color:#3D3D3D;font face=verdana"><b>Ticket Price: Rs.</b>{{=postal.Ticket_Price_HA}}</p>
+		</div>
+	</td>
+</table>
+</div>
+
+{{pass}}
+<div class="boxed1" style="margin-top: 20px;">
+    {{for comment in comments:}}
+
+     <div class="well"><strong>{{=comment.User_Comment_Place}}</strong><br/>Rated : {{=comment.User_Rating_Place}}/5<br/><a href={{=URL('comment',args=[comment.id,comment.User_Comment_Place])}}>Comment</a><br />Posted on {{=comment.created_on}} by {{=comment.created_by.first_name}} {{=comment.created_by.last_name}}</p>
+    </div>
+{{pass}}
+
+</div>
+<div class="boxed">
+{{=form}}
+</div>
